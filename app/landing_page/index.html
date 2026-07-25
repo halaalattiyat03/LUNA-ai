@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna AI - رفيقتك الذكية للصحة والأسلوب الشخصي</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        luna: {
+                            purple: '#8B5CF6',
+                            pink: '#EC4899',
+                            rose: '#F43F5E',
+                            dark: '#0F172A',
+                            softBg: '#FAF5FF'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #0d0b18;
+            color: #f1f5f9;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card-hover:hover {
+            transform: translateY(-6px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(236, 72, 153, 0.4);
+            box-shadow: 0 20px 40px -15px rgba(236, 72, 153, 0.25);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #A855F7, #EC4899, #F43F5E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-btn {
+            background: linear-gradient(135deg, #8B5CF6, #EC4899);
+            transition: all 0.3s ease;
+        }
+        .gradient-btn:hover {
+            opacity: 0.92;
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.5);
+        }
+
+        .phone-frame {
+            border: 12px solid #1e1b2e;
+            border-radius: 44px;
+            box-shadow: 0 25px 60px -15px rgba(139, 92, 246, 0.3);
+            background: #13111C;
+        }
+
+        .pulse-glow {
+            animation: pulseGlow 4s infinite alternate;
+        }
+        @keyframes pulseGlow {
+            0% { opacity: 0.3; transform: scale(1); }
+            100% { opacity: 0.6; transform: scale(1.15); }
+        }
+    </style>
+</head>
+<body class="selection:bg-pink-500 selection:text-white">
+
+    <!-- Glowing Background Lights -->
+    <div class="fixed top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-purple-600/30 rounded-full blur-3xl pointer-events-none pulse-glow"></div>
+    <div class="fixed bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-pink-600/20 rounded-full blur-3xl pointer-events-none pulse-glow" style="animation-delay: 2s;"></div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 glass-card border-b border-white/10 px-6 py-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <!-- Brand Logo -->
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-purple-500 to-pink-500 flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-pink-500/30">
+                    <i class="fa-solid font-bold fa-moon"></i>
+                </div>
+                <div class="text-right">
+                    <span class="text-xl font-extrabold tracking-wide text-white">Luna <span class="gradient-text">AI</span></span>
+                    <span class="block text-xs text-slate-400">Wellness & Lifestyle Companion</span>
+                </div>
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
+                <a href="#features" class="hover:text-pink-400 transition-colors">الميزات الرئيسية</a>
+                <a href="#tech-stack" class="hover:text-pink-400 transition-colors">التقنيات المستخدمة</a>
+                <a href="#demo" class="hover:text-pink-400 transition-colors">عرض توضيحي</a>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-3">
+                <a href="https://drive.google.com/file/d/1GZLobhyNLSuSbdS8eotBEpzdIkjdKuK0/view?usp=sharing" target="_blank" class="gradient-btn px-5 py-2.5 rounded-full text-white text-sm font-bold flex items-center gap-2">
+                    <i class="fa-brands fa-android text-base"></i>
+                    <span>تحميل APK</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-16 pb-20 px-6 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Text Content (RTL Right) -->
+            <div class="lg:col-span-7 text-right space-y-6">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-pink-500/30 text-pink-300 text-xs font-semibold">
+                    <i class="fa-solid fa-sparkles text-amber-400"></i>
+                    <span>تطبيق أندرويد متكامل مبني بتقنية Jetpack Compose</span>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-black leading-tight text-white">
+                    رفيقتك الذكية <br>
+                    <span class="gradient-text">للصحة والتطور الشخصي</span>
+                </h1>
+
+                <p class="text-slate-300 text-lg leading-relaxed max-w-2xl font-light">
+                    تطبيق <strong class="text-white font-bold">Luna AI</strong> هو مساعد ذكي متكامل مصمم بأسلوب عصري جذاب ليساعدكِ على متابعة عاداتك اليومية، تسجيل يومياتك بالصوت والصورة، والتواصل مع رفيقتك الذكية للحصول على دعم وإرشادات في مجالات العناية والرياضة والصحة النفسية.
+                </p>
+
+                <!-- CTA Action Buttons -->
+                <div class="pt-4 flex flex-wrap items-center gap-4">
+                    <a href="https://drive.google.com/file/d/1GZLobhyNLSuSbdS8eotBEpzdIkjdKuK0/view?usp=sharing" target="_blank" class="gradient-btn px-7 py-4 rounded-2xl text-white text-base font-bold flex items-center gap-3 shadow-xl">
+                        <i class="fa-brands fa-android text-2xl"></i>
+                        <div class="text-right">
+                            <span class="block text-xs opacity-90">تحميل مباشر لأجهزة أندرويد</span>
+                            <span class="text-sm font-extrabold">تحميل ملف APK</span>
+                        </div>
+                    </a>
+
+                    <a href="https://ais-pre-lowe5frluhmggwdgr4br5v-319696151210.asia-east1.run.app" target="_blank" class="glass-card glass-card-hover px-6 py-4 rounded-2xl text-slate-200 text-sm font-bold flex items-center gap-3 border border-white/20">
+                        <i class="fa-solid fa-laptop text-pink-400 text-xl"></i>
+                        <div class="text-right">
+                            <span class="block text-xs text-slate-400">تجربة تفاعلية مباشرة</span>
+                            <span class="text-sm font-bold text-white">تشغيل المحاكي أونلاين</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Fast Specs Badges -->
+                <div class="pt-6 grid grid-cols-3 gap-4 border-t border-white/10 text-center">
+                    <div>
+                        <span class="block text-2xl font-black text-purple-400">100%</span>
+                        <span class="text-xs text-slate-400">Kotlin & Jetpack Compose</span>
+                    </div>
+                    <div>
+                        <span class="block text-2xl font-black text-pink-400">Organic</span>
+                        <span class="text-xs text-slate-400">Custom Bezier Charts</span>
+                    </div>
+                    <div>
+                        <span class="block text-2xl font-black text-emerald-400">Real-time</span>
+                        <span class="text-xs text-slate-400">Instant Search & Filter</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Phone Preview Mockup -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative phone-frame w-[300px] h-[600px] p-2 overflow-hidden flex flex-col justify-between">
+                    <!-- Top Notch -->
+                    <div class="w-32 h-4 bg-slate-900 mx-auto rounded-b-xl z-20 mb-2"></div>
+                    
+                    <!-- App Inner Screen Preview -->
+                    <div class="flex-1 rounded-[32px] bg-gradient-to-b from-purple-950/80 to-slate-950 p-4 space-y-4 text-right overflow-y-auto">
+                        <!-- App Header Mini -->
+                        <div class="flex justify-between items-center pb-2 border-b border-white/10">
+                            <span class="text-xs text-slate-300">مرحباً هالة 🌸</span>
+                            <div class="w-6 h-6 rounded-full bg-pink-500/20 text-pink-400 flex items-center justify-center text-xs">
+                                <i class="fa-solid fa-moon"></i>
+                            </div>
+                        </div>
+
+                        <!-- Chat Bubble Mini Preview -->
+                        <div class="space-y-2">
+                            <div class="bg-purple-900/40 p-3 rounded-2xl border border-purple-500/30 text-xs leading-relaxed text-slate-200">
+                                ✨ <strong>Luna AI:</strong> صباح الخير! هل ترغبين اليوم بمتابعة روتين العناية للبشرة أم تسجيل شرب الماء؟
+                            </div>
+                        </div>
+
+                        <!-- Mini Chart Preview -->
+                        <div class="bg-slate-900/80 p-3 rounded-2xl border border-white/10 space-y-2">
+                            <div class="flex justify-between items-center text-[10px]">
+                                <span class="font-bold text-pink-400">مخطط الشرب والنوم الأسبوعي</span>
+                                <span class="text-emerald-400">94% ممتاز</span>
+                            </div>
+                            <!-- SVG Curve Line -->
+                            <svg class="w-full h-16" viewBox="0 0 100 40">
+                                <path d="M0 30 Q 25 10, 50 25 T 100 15" fill="none" stroke="#EC4899" stroke-width="2.5"/>
+                                <path d="M0 25 Q 25 35, 50 15 T 100 20" fill="none" stroke="#00B4D8" stroke-width="2.5" stroke-dasharray="2,2"/>
+                            </svg>
+                        </div>
+
+                        <!-- Habits Mini List -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center p-2 rounded-xl bg-white/5 border border-white/10 text-xs">
+                                <span class="text-slate-200">💧 شرب 2.5 ليتر ماء</span>
+                                <span class="text-emerald-400 font-bold"><i class="fa-solid fa-circle-check"></i> تم</span>
+                            </div>
+                            <div class="flex justify-between items-center p-2 rounded-xl bg-white/5 border border-white/10 text-xs">
+                                <span class="text-slate-200">🧘‍♀️ تمارين بيلاتس 20 دقيقة</span>
+                                <span class="text-emerald-400 font-bold"><i class="fa-solid fa-circle-check"></i> تم</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Nav Line -->
+                    <div class="w-24 h-1 bg-slate-700 mx-auto rounded-full mt-2"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section id="features" class="py-20 px-6 max-w-6xl mx-auto border-t border-white/10">
+        <div class="text-center space-y-4 mb-16">
+            <h2 class="text-3xl md:text-5xl font-black text-white">ميزات التطبيق الرئيسية</h2>
+            <p class="text-slate-400 text-base max-w-xl mx-auto">تصميم عصري متكامل مع ميزات ذكية تم تطويرها بأحدث معايير Android M3 Design</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Feature 1 -->
+            <div class="glass-card glass-card-hover p-8 rounded-3xl space-y-4">
+                <div class="w-14 h-14 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-2xl border border-purple-500/30">
+                    <i class="fa-solid fa-comments"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white">محادثة ذكية تفاعلية (Luna Chat)</h3>
+                <p class="text-slate-300 text-sm leading-relaxed">
+                    محادثة فورية مع رفيقتك الذكية، تدعم الإدخال الصوتي (Voice Sheet)، اقتراحات التحدث السريعة، مع استجابة عاطفية وتخصيص دقيق.
+                </p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="glass-card glass-card-hover p-8 rounded-3xl space-y-4">
+                <div class="w-14 h-14 rounded-2xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-2xl border border-pink-500/30">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white">رسومات بيانية عضوية (Canvas Charts)</h3>
+                <p class="text-slate-300 text-sm leading-relaxed">
+                    مخطط بياني انسيابي مرسوم خصيصاً بواسطة Compose Canvas لمتابعة مستويات شرب الماء وساعات النوم أسبوعياً مع ميزة التصفية التفاعلية.
+                </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="glass-card glass-card-hover p-8 rounded-3xl space-y-4">
+                <div class="w-14 h-14 rounded-2xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-2xl border border-rose-500/30">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white">بحث علوي دائم وترشيح فوري</h3>
+                <p class="text-slate-300 text-sm leading-relaxed">
+                    مكون بحث علوي مستمر (Persistent Search) يدعم الترشيح المباشر للنصوص في الاستكشاف واليوميات مع حركات انسيابية (Fade & Scale).
+                </p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="glass-card glass-card-hover p-8 rounded-3xl space-y-4">
+                <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl border border-emerald-500/30">
+                    <i class="fa-solid fa-book-journal"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white">سجل اليوميات التفاعلي (Journal)</h3>
+                <p class="text-slate-300 text-sm leading-relaxed">
+                    تسجيل الخواطر والامتنان مع تحديد حالة المزاج، إرفاق الصور، والوسوم الذكية مع استعراض زمني جميل وأنيق.
+                </p>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="glass-card glass-card-hover p-8 rounded-3xl space-y-4">
+                <div class="w-14 h-14 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl border border-amber-500/30">
+                    <i class="fa-solid fa-compass"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white">قسم الاستكشاف الذكي (Explore)</h3>
+                <p class="text-slate-300 text-sm leading-relaxed">
+                    تصنيفات متنوعة تتضمن العناية بالبشرة، تمارين البيلاتس، الصحة الدورية، التوجيه المهني، واليوغا مع بطاقات Glassmorphic أنيقة.
+                </p>
+            </div>
+
+            <!-- Feature 6 -->
+            <div class="glass-card glass-card-hover p-8 rounded-3xl space-y-4">
+                <div class="w-14 h-14 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-2xl border border-cyan-500/30">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white">واجهة متجاوبة وشاشات طافية</h3>
+                <p class="text-slate-300 text-sm leading-relaxed">
+                    دعم كامل للـ Edge-to-Edge، أزرار إشعارات تفاعلية، وقوائم سفلية (Luna Bottom Bar) مع حركات تنقل سلسة للغاية.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="tech-stack" class="py-20 px-6 max-w-6xl mx-auto border-t border-white/10">
+        <div class="text-center space-y-4 mb-12">
+            <h2 class="text-3xl md:text-4xl font-black text-white">التقنيات والهندسة البرمجية</h2>
+            <p class="text-slate-400 text-sm">تم تطوير التطبيق بالكامل وفق أفضل ممارسات Android الحديثة</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-4">
+            <span class="glass-card px-5 py-3 rounded-2xl border border-purple-500/30 text-purple-300 font-bold text-sm flex items-center gap-2">
+                <i class="fa-brands fa-android text-lg"></i> Kotlin 100%
+            </span>
+            <span class="glass-card px-5 py-3 rounded-2xl border border-pink-500/30 text-pink-300 font-bold text-sm flex items-center gap-2">
+                <i class="fa-solid fa-layer-group text-lg"></i> Jetpack Compose
+            </span>
+            <span class="glass-card px-5 py-3 rounded-2xl border border-rose-500/30 text-rose-300 font-bold text-sm flex items-center gap-2">
+                <i class="fa-solid fa-cubes text-lg"></i> Material Design 3 (M3)
+            </span>
+            <span class="glass-card px-5 py-3 rounded-2xl border border-cyan-500/30 text-cyan-300 font-bold text-sm flex items-center gap-2">
+                <i class="fa-solid fa-chart-area text-lg"></i> Custom Compose Canvas
+            </span>
+            <span class="glass-card px-5 py-3 rounded-2xl border border-emerald-500/30 text-emerald-300 font-bold text-sm flex items-center gap-2">
+                <i class="fa-solid fa-bolt text-lg"></i> Coroutines & StateFlow
+            </span>
+            <span class="glass-card px-5 py-3 rounded-2xl border border-amber-500/30 text-amber-300 font-bold text-sm flex items-center gap-2">
+                <i class="fa-solid fa-wand-magic-sparkles text-lg"></i> ViewModel Architecture
+            </span>
+        </div>
+    </section>
+
+    <!-- Download & Action Banner -->
+    <section id="demo" class="py-16 px-6 max-w-5xl mx-auto mb-20">
+        <div class="glass-card p-10 md:p-14 rounded-[40px] text-center border border-pink-500/40 relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-pink-500/20 rounded-full blur-2xl"></div>
+            
+            <div class="relative z-10 space-y-6">
+                <h2 class="text-3xl md:text-5xl font-black text-white">جاهزة لتجربة Luna AI؟</h2>
+                <p class="text-slate-300 text-base max-w-xl mx-auto">
+                    يمكنكِ تحميل ملف الـ APK وتثبيته مباشرة على هاتفك الذكي، أو تجربة التطبيق حياً عبر المتصفح بدون تثبيت.
+                </p>
+
+                <div class="pt-4 flex flex-wrap justify-center items-center gap-5">
+                    <a href="https://drive.google.com/file/d/1GZLobhyNLSuSbdS8eotBEpzdIkjdKuK0/view?usp=sharing" target="_blank" class="gradient-btn px-8 py-4 rounded-2xl text-white font-black text-base flex items-center gap-3 shadow-2xl">
+                        <i class="fa-brands fa-android text-2xl"></i>
+                        <span>تحميل التطبيق APK (Google Drive)</span>
+                    </a>
+
+                    <a href="https://ais-pre-lowe5frluhmggwdgr4br5v-319696151210.asia-east1.run.app" target="_blank" class="glass-card glass-card-hover px-8 py-4 rounded-2xl text-white font-bold text-base border border-white/30 flex items-center gap-3">
+                        <i class="fa-solid fa-play text-pink-400 text-lg"></i>
+                        <span>تجربة المحاكي أونلاين</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-8 text-center text-xs text-slate-500">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>© 2026 Luna AI - Android Showcase Project. Developed with Jetpack Compose & Kotlin.</p>
+            <div class="flex gap-4 text-slate-400 text-sm">
+                <a href="https://drive.google.com/file/d/1GZLobhyNLSuSbdS8eotBEpzdIkjdKuK0/view?usp=sharing" target="_blank" class="hover:text-pink-400">رابط APK</a>
+                <a href="https://ais-pre-lowe5frluhmggwdgr4br5v-319696151210.asia-east1.run.app" target="_blank" class="hover:text-pink-400">رابط المحاكي</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

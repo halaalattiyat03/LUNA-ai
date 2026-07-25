@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Luna AI",
+  "description": "Your intelligent companion, designed for every stage of your journey.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
